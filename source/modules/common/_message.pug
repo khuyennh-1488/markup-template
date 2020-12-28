@@ -1,0 +1,5 @@
+//- Message
+//- @text {string} - text
+//- @type {string} - ex: 'danger', 'accent'
+mixin message({ text='', type='' })
+  .message(class=`message--${type}`)= text

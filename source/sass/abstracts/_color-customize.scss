@@ -1,0 +1,43 @@
+// ======================================================
+// Abstracts :: Variables
+// ======================================================
+
+// Colors
+$color-primary: #00a0ff;
+$color-primary2: #0090e6;
+$color-brand: #75bcde;
+$color-blue: #e8f6fc;
+$color-blue2: #f4fbfe;
+$color-gray: #f6f8f7;
+$color-accent: #e3a807;
+$color-attention: #f60856;
+$color-attention2: rgba(246, 8, 86, 0.1);
+$color-light: #e1e4e8;
+$color-title: #092e44;
+$color-button: #e4e4e4;
+$color-white: #fff;
+$color-content: #363636;
+$color-black: #000;
+$color-info-sub: #b8babb;
+$color-info-main: #737678;
+$color-link: #6ab9e7;
+$color-green: #46be28;
+$color-gray-disabled: #f4f4f4;
+$color-purple: #5f539a;
+
+// Colors override boostrap
+$primary: $color-primary;
+$danger: $color-attention;
+$warning: $color-accent;
+$cyan: $color-brand;
+$success: $color-green;
+$info: $color-title;
+
+// Shadows
+$shadow: 0 1px 2px rgba(9, 46, 68, 0.3);
+$shadow2: 0 4px 8px rgba(9, 46, 68, 0.3);
+$shadow3: 2px 2px 4px 1px rgba(9, 46, 68, 0.2);
+$shadow4: 0 4px 8px rgba(9, 46, 68, 0.3);
+
+// Gradients
+$gradient: linear-gradient(180deg, rgba($color-white, 0.5) 0%, rgba($color-white, 0) 100%), #f4f4f4;

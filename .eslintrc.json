@@ -1,0 +1,48 @@
+{
+  "env": {
+    "browser": true,
+    "jquery": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "rules": {
+    "quotes": ["warn", "single"],
+    "comma-spacing": ["warn", {
+      "before": false,
+      "after": true
+    }],
+    "space-before-blocks": ["warn", {
+      "functions": "always",
+      "keywords": "always",
+      "classes": "always"
+    }],
+    "space-before-function-paren": ["warn", "never"],
+    "no-console": ["warn", {
+      "allow": ["warn", "error"]
+    }],
+    "no-multi-spaces": ["warn", {
+      "ignoreEOLComments": true
+    }],
+    "no-trailing-spaces": "warn",
+    "space-infix-ops": "warn",
+    "keyword-spacing": ["warn", {
+      "before": true,
+      "after": true
+    }],
+    "camelcase": "error",
+    "object-curly-spacing": ["warn", "always"]
+  },
+  "globals": {
+    "flatpickr": true,
+    "rangePlugin": true,
+    "formatCurrency": true,
+    "optionDatepicker": true,
+    "initDatePickerSimple": true,
+    "initDatePickerRange": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  }
+}

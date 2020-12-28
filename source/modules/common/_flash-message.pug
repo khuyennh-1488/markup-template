@@ -1,0 +1,15 @@
+mixin flash-message({ success = true })
+  .flash-message(
+    class= success ? 'flash-message--success' : 'flash-message--failed'
+  )&attributes(attributes)
+    .flash-message__close.js-close-message
+      +icon-svg('icon-close')
+    .flash-message__inner
+      if success
+        .flash-message__icon
+          +icon-svg('icon-success')
+        .flash-message__content 操作に成功しました。
+      else
+        .flash-message__icon
+          +icon-svg('icon-warning')
+        .flash-message__content 操作に失敗しました。

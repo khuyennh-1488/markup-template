@@ -1,0 +1,46 @@
+//-------------------------------------------------------
+//- Common :: Pagination
+//-------------------------------------------------------
+mixin pagination({ options = [{ item: '10 件' }, { item: '20 件' }], totalItem = '200', onlyPaging = false, selectTwo = false, pagingNumber=true, range = '100', labelSelect1 = '表示件数', labelSelect2 = '表示件数' })
+  .paging(
+    class = onlyPaging ? 'justify-content-end' : null
+  )&attributes(attributes)
+    if !onlyPaging
+      .paging__content
+        .paging__total
+          | 全 #{totalItem} 件中
+        .paging__range 1〜#{range} 件を表示
+        .paging__option
+          +select-field({
+            label: labelSelect1,
+            value: options,
+            size: 'u-width-140'
+          })
+        if selectTwo
+          .paging__option.u-ml-25
+            +select-field({
+              label: labelSelect2,
+              value: [
+                { item: '30 件' }
+              ],
+              size: 'u-width-140'
+            })
+    if pagingNumber
+      .paging__page
+        ul.pagination
+          li.page-item
+            a.page-link(href="#" aria-label="Previous")
+              +icon-svg('icon-chevron-left')
+          li.page-item
+            a.page-link.paging__link.paging__link--active(href="#") 1
+          li.page-item
+            a.page-link.paging__link(href="#") 2
+          li.page-item
+            a.page-link.paging__link(href="#") 3
+          li.page-item
+            a.page-link.paging__link(href="#") 4
+          li.page-item
+            a.page-link.paging__link(href="#") 5
+          li.page-item
+            a.page-link(href="#" aria-label="Next")
+              +icon-svg('icon-chevron-right')

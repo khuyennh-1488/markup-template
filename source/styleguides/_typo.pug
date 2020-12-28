@@ -1,0 +1,32 @@
+//-------------------------------------------------------
+//- Styleguides :: Typo
+//-------------------------------------------------------
+include ../modules/common/_typo
+
+.row
+  .col-12.col-lg-6
+    .code-example
+      .demo
+        .mb-3
+          +heading({
+            title: 'title h2',
+          })
+        .mb-3
+          +heading({
+            title: 'title h3',
+            type: 'h3'
+          })
+        +heading({
+          title: 'title h4',
+          type: 'h4'
+        })
+      pre.language-pug
+        code
+          |//- Heading
+          |//- @title {string} - text
+          |//- @type {boolean} - tag h2 / h3 / h4
+          |
+          |+heading({
+          |  title: 'title h3',
+          |  type: 'h3'
+          |})

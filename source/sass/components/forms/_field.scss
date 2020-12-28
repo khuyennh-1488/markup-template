@@ -1,0 +1,303 @@
+// ======================================================
+// Components :: Input
+// ======================================================
+
+.form-control {
+  height: 30px;
+  border: 1px solid $color-light;
+  border-radius: $border-radius-small;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: $color-brand !important;
+  }
+}
+
+.label-field {
+  font-size: $font-size-small;
+
+  &__required {
+    margin-top: 2px;
+    margin-left: 8px;
+    padding: 1px 5px;
+    background: $color-attention2;
+    color: $color-attention;
+    font-size: $font-size-xs;
+    border-radius: $border-radius-small;
+    user-select: none;
+  }
+}
+
+.form-group {
+  &__text {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 7px;
+    padding-right: 15px;
+  }
+
+  .text-danger {
+    font-size: $font-size-small;
+  }
+
+  &--input {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0;
+    margin-right: 8px;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid $color-light;
+      border-radius: $border-radius-base;
+      font-size: $font-size-small;
+
+      &.read-only,
+      &.disabled {
+        pointer-events: none;
+        background: $color-gray;
+      }
+
+      &.error {
+        border-color: $color-attention;
+      }
+
+      &.text-error {
+        color: $color-attention;
+      }
+    }
+
+    input {
+      height: 30px;
+
+      &.short {
+        width: 80px;
+      }
+    }
+
+    textarea {
+      min-height: 60px;
+      resize: none;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__label {
+    color: $color-content;
+    font-size: $font-size-small;
+  }
+}
+
+.label-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  padding: 2px 10px;
+  height: 16px;
+  margin-left: 8px;
+  font-size: $font-size-small;
+  border-radius: 15px;
+  white-space: nowrap;
+
+  &--red {
+    color: $color-attention;
+    font-weight: $font-weight-bold;
+  }
+
+  &--red-fill {
+    background: $color-attention;
+    color: $color-white;
+  }
+
+  &--yellow {
+    color: $color-accent;
+  }
+
+  &--yellow-fill {
+    color: $color-white;
+    background: $color-accent;
+  }
+
+  &--blue {
+    color: $color-brand;
+  }
+
+  &--blue-fill {
+    background: $color-brand;
+    color: $color-white;
+  }
+
+  &--green {
+    color: $color-green;
+  }
+
+  &--green-fill {
+    color: $color-white;
+    background: $color-green;
+  }
+
+  &--purple {
+    color: $color-purple;
+  }
+
+  &--purple-fill {
+    color: $color-white;
+    background: $color-purple;
+  }
+
+  &--gray {
+    color: $color-info-sub;
+  }
+
+  &--gray-fill {
+    color: $color-info-main;
+    background: $color-button;
+  }
+
+  &--info-main {
+    color: $color-info-main;
+  }
+
+  &--accent {
+    color: $color-accent;
+  }
+}
+
+.prefix {
+  font-weight: $font-weight-bold;
+  white-space: nowrap;
+  padding-right: 10px;
+}
+
+.suffix {
+  white-space: nowrap;
+  padding-left: 10px;
+}
+
+.input-file {
+  display: flex;
+  align-items: center;
+
+  &__upload {
+    display: inline-block;
+    min-width: 120px;
+    background: $color-primary;
+    border-radius: $border-radius-base;
+    font-size: $font-size-xs;
+    color: $color-white;
+    padding: 3px 10px;
+    text-align: center;
+    position: relative;
+    @include transition();
+
+    &:hover {
+      background: $color-primary2;
+    }
+
+    input[type='file'] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    span {
+      font-weight: $font-weight-bold;
+    }
+
+    &.button-outline {
+      border: 1px solid $color-primary !important;
+      background-color: $color-white;
+      padding: 5px 10px;
+
+      span {
+        font-weight: $font-weight-base;
+        font-size: $font-size-small;
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__file-name {
+    display: block;
+    max-width: 600px;
+    font-size: $font-size-small;
+    padding: 0 8px;
+    word-break: break-word;
+  }
+}
+
+.group-input-field {
+  display: flex;
+  align-items: flex-start;
+  font-size: $font-size-small;
+  color: $color-content;
+
+  .label-field {
+    padding-right: 15px;
+    align-self: center;
+  }
+}
+
+.textarea-file {
+  border: 1px solid $color-light;
+  border-radius: $border-radius-medium;
+  overflow: hidden;
+  @include transition();
+
+  &:focus-within {
+    border-color: $color-brand;
+  }
+
+  .form-group {
+    margin: 0;
+
+    textarea {
+      border: 0;
+    }
+  }
+
+  &__block {
+    padding: 0 20px;
+  }
+
+  &__download,
+  &__upload {
+    display: flex;
+    align-items: center;
+    padding: 14px 0;
+    border-top: 1px dashed $color-light;
+  }
+
+  &__download {
+    a {
+      display: flex;
+      align-items: center;
+      font-size: $font-size-small;
+      color: $color-info-main;
+      text-decoration: underline;
+      padding: 0 8px;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      i {
+        margin-left: 8px;
+      }
+    }
+  }
+}

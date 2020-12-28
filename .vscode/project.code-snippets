@@ -1,0 +1,101 @@
+{
+  "input field": {
+    "prefix": "input-field",
+    "body": [
+      "+input-field({",
+      "\tlabel: '$1',",
+      "\tid: '',",
+      "\tvalue: '',",
+      "\tplaceholder: '',",
+      "\trequired: true",
+      "})"
+    ]
+  },
+  "textarea field": {
+    "prefix": "textarea-field",
+    "body": [
+      "+textarea-field({",
+      "\tlabel: '$1',",
+      "\tplaceholder: '',",
+      "\trequired: true",
+      "})"
+    ]
+  },
+  "checkbox field": {
+    "prefix": "checkbox-field",
+    "body": [
+      "+checkbox-field({",
+      "\tvalue: '$1',",
+      "\tid: '',",
+      "\tname: '',",
+      "\tchecked: true,",
+      "})"
+    ]
+  },
+  "radio field": {
+    "prefix": "radio-field",
+    "body": [
+      "+radio-field({",
+      "\tvalue: '$1',",
+      "\tid: '',",
+      "\tname: '',",
+      "\tchecked: true,",
+      "})"
+    ]
+  },
+  "button field": {
+    "prefix": "button",
+    "body": ["+button({", "\ttext: '$1',", "\ttype: 'cancel'", "})"]
+  },
+  "button icon": {
+    "prefix": "button-icon",
+    "body": [
+      "+button-icon({",
+      "\ttext: '$1',",
+      "\ticon: '$2',",
+      "\tline: true,",
+      "\ticonLeft: true,",
+      "})"
+    ]
+  },
+  "button line": {
+    "prefix": "button-line",
+    "body": [
+      "+button-line({",
+      "\ttext: '$1',",
+      "\tcolor: 'blue / red / black / yellow'",
+      "})"
+    ]
+  },
+  "link": {
+    "prefix": "link",
+    "body": [
+      "+link({",
+      "\ttext: '$1',",
+      "\thref: '$2',",
+      "\tline: true,",
+      "\tsmall: true,",
+      "})"
+    ]
+  },
+  "table": {
+    "prefix": "table",
+    "body": [
+      "table.table.table-custom",
+      "\tthead",
+      "\t\ttr",
+      "\t\t\tth header",
+      "\t\t\tth(width='100') header",
+      "\t\t\tth header",
+      "\t\t\tth header",
+      "\t\t\tth.text-left header",
+      "\ttbody",
+      "\t\ttr",
+      "\t\t\ttd cell",
+      "\t\t\ttd cell",
+      "\t\t\ttd cell",
+      "\t\t\ttd cell",
+      "\t\t\ttd cell"
+    ]
+  }
+}

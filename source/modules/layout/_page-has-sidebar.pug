@@ -1,0 +1,16 @@
+extends _core
+
+block body
+  +header()
+
+  .main
+    .header-container
+      block title-page
+    block sidebar-link
+      +sidebar-link(values)
+    block sidebar
+      +sidebar(items)
+    .main-container.main-container--widen.js-main-container
+      block main
+
+  +footer()

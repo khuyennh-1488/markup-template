@@ -1,0 +1,244 @@
+//-------------------------------------------------------
+//- Styleguides :: Forms
+//-------------------------------------------------------
+include ../modules/common/_forms
+include ../modules/common/_button
+
+.row
+  .col-12.col-xl-6
+    .code-example
+      .demo
+        +input-field({
+          label: 'text',
+          id: 'input1',
+          required: true,
+          suffix: '%'
+        })
+        +input-field({
+          label: 'text',
+          id: 'input2',
+          required: true,
+          short: true
+        })
+        +input-field({
+          label: 'Required message',
+          required: true,
+          value: '必須項目です。入力してください。',
+          borderRed: true,
+        })
+        +input-field({
+          label: 'text',
+          id: 'input2',
+          error: 'text error'
+        })(class='mb-3')
+      pre.language-pug
+        code
+          |//- Input field
+          |//- @label {string} - label field
+          |//- @id {string} - input id &amp; label for
+          |//- @placeholder {string} - input placeholder
+          |//- @value {string} - input value
+          |//- @required {boolean} - label required field
+          |//- @error {boolean} - error text validate
+          |//- @type {string: [text / password / email / number...]} - input type
+          |//- @readOnly {boolean} - input read only
+          |//- @size {string class utility} - set width
+          |//- @short {boolean} - input small size
+          |//- @suffix {string} - suffix text
+          |//- @red {boolean} - value color red
+          |//- @borderRed {boolean} - border color red
+          |//- @dataRadio - used to open / close input (ex: dataRadio: 'toggle-input-xxx')
+          |
+          |+input-field({
+          |  label: 'text',
+          |  id: 'input1',
+          |  required: true,
+          |  error: 'text error',
+          |  suffix: '%'
+          |})
+    .code-example
+      .demo
+        +textarea-field({
+          label: 'text',
+          id: 'textarea1',
+          required: true
+        })
+        +textarea-field({
+          label: 'text',
+          id: 'textarea2',
+          error: 'text error'
+        })
+      pre.language-pug
+        code
+          |//- Textarea field
+          |//- @label {string} - label field
+          |//- @id {string} - input id &amp; label for
+          |//- @placeholder {string} - input placeholder
+          |//- @value {string} - input value
+          |//- @required {boolean} - label required field
+          |//- @error {boolean} - error text validate
+          |
+          |+textarea-field({
+          |  label: 'text',
+          |  id: 'textarea1',
+          |  required: true,
+          |  error: 'text error'
+          |})
+          |
+          |//- Textarea file
+          |//- @name {string} - name of textarea
+          |//- @fileNameDownload {string} - name of file download
+          |//- @upload {bool} - input file upload
+          |+textarea-file({
+          |  name: 'textarea-file-1',
+          |  fileNameDownload: 'download file.svg',
+          |})
+
+  .col-12.col-xl-6
+    .code-example
+      .demo
+        .d-flex.align-items-center
+          +button({ text:'text' })(class='mr-3')
+          +button({
+            text: 'text',
+            type: 'cancel'
+          })(class='mr-3')
+          +button({
+            text: 'button line',
+            type: 'bg-blue'
+          })(class='mr-3')
+        .d-flex.align-items-center.mt-4
+          +button({
+            text: 'text',
+            big: true,
+            bold: true
+          })(class='mr-3')
+          +button({
+            text: 'text',
+            big: true,
+            type: 'cancel'
+          })
+          +button({
+            text: 'text',
+            big: true,
+            type: 'gray'
+          })(class='ml-3')
+        .d-flex.align-items-center.mt-4
+          +button-icon({
+            text: 'search',
+            iconLeft: true,
+            color: 'info',
+            icon: 'search',
+            bold: true,
+          })(class='mr-3')
+          +button-icon({
+            text: 'text',
+            icon: 'plus',
+            iconLeft: true,
+          })(class='mr-3')
+          a.link.line-effect.mr-3(href='') link
+        .d-flex.align-items-center.mt-4
+          +button-line({
+            text: 'text',
+            color: 'blue',
+          })(class='ml-0')
+          +button-line({
+            text: 'text',
+            color: 'red'
+          })
+          +button-line({
+            text: 'text',
+            color: 'black'
+          })
+          +button-line({
+            text: 'text',
+            color: 'yellow'
+          })
+        .d-flex.align-items-center.mt-4
+          +button-icon({
+            text: 'edit',
+            iconColors: 'edit-note',
+            line: true,
+          })(class='ml-3')
+      pre.language-pug
+        code
+          |//- Button
+          |//- @text {string} - text button
+          |//- @type {string: [primary / cancel]} - type color button
+          |//- @disabled {boolean} - button disabled
+          |//- @big {boolean} - button big size
+          |//- @bold {boolean} - button font weight bold
+          |
+          |+button({
+          |  text: 'text',
+          |  type: 'cancel',
+          |  big: true,
+          |  bold: true
+          |})
+          |
+          |a.link(href='') link
+          |
+          |//- Button line border
+          |//- @... extends 'Button'
+          |//- @color {string: [blue / red / black]} - color button
+          |//- No properties: type
+          |
+          |+button-line({ text: 'text', color: 'blue' })
+          |
+          |//- @line {boolean} - text decoration underline
+          |//- @iconLeft {boolean} - icon before text
+          |//- @color {string} - color class bootstrap
+          |//- @icon {string} - icon single color
+          |//- @iconColors {string} - icon multi color
+          |//- @bold {boolean} - bold text
+          |
+          |+button-icon({
+          |  text: 'icon left',
+          |  color: 'primary',
+          |  iconLeft: true,
+          |  line: true,
+          |  icon: 'edit',
+          |})
+    .code-example
+      .demo
+        +checkbox-field({ value: 'checkbox - disabled - checked', id: 'checkbox', disabled: true, checked: true })(class='u-mb-10')
+        +checkbox-field({ value: 'checkbox - disabled', id: 'checkbox', disabled: true })(class='u-mb-10')
+        +checkbox-field({ value: 'checkbox', id: 'checkbox2', checked: true})(class='u-mb-10')
+        +checkbox-field({ value: 'checkbox', id: 'checkbox3', withBackground: true, checked: true})(class='u-mb-10')
+        +radio-field({ value: 'radio', id: 'radio' })(class='u-mb-10')
+        +radio-field({ value: 'radio', id: 'radio2', checked: true})(class='u-mb-10')
+        .d-flex.justify-content-between.mt-3
+          +label-tag({ text: 'red', color: 'red' })
+          +label-tag({ text: 'red-fill', color: 'red-fill' })
+          +label-tag({ text: 'yellow', color: 'yellow' })
+          +label-tag({ text: 'yellow-fill', color: 'yellow-fill' })
+          +label-tag({ text: 'OK', color: 'blue' })
+          +label-tag({ text: 'OK', color: 'blue-fill' })
+          +label-tag({ text: 'Gray Fill', color: 'gray-fill' })
+      pre.language-pug
+        code
+          |//- Checkbox / Radio
+          |//- @value {object: [{item}] - option select
+          |//- @label {string} - label field
+          |//- @name {string} - name field
+          |//- @id {string} - input id & label for
+          |//- @checked {boolean} - checked
+          |//- @isDisabled {boolean} - disabled field
+          |//- @withBackground {boolean} - checkbox with background
+          |
+          |+checkbox-field({
+          |  value: 'checkbox',
+          |  id: 'checkbox2',
+          |  checked: true
+          |})
+          |
+          |+radio-field({ value: 'radio',
+          |  id: 'radio2',
+          |  checked: true
+          |})
+          |
+          |//- Label status
+          |//- @text {string} - label text
+          |//- @color {string: [red / yellow / blue / gray / *-fill]} - label color
+          |
+          |+label-tag({ text: 'red', color: 'red' })

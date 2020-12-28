@@ -1,0 +1,10 @@
+//-------------------------------------------------------
+//- Common :: Icons
+//-------------------------------------------------------
+
+mixin icon-svg(name)
+  svg.minicon&attributes(attributes)
+    use(xlink:href=`images/sprite.svg#${name}`)
+
+mixin icon-bg(name)
+  i(class=`icon icon--${name}`)&attributes(attributes)

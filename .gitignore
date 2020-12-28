@@ -1,0 +1,24 @@
+# Frontend folder
+dest/
+tmp/
+
+# Dependency directories
+node_modules/
+
+# Dependency lock files
+# We only use Yarn as our official Node package manager, and so we will only
+# commit yarn.lock files, and ignore package-lock.json files
+package-lock.json
+
+# Mac files
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor/IDE
+.idea/

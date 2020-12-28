@@ -1,0 +1,36 @@
+//-------------------------------------------------------
+//- Styleguides :: Colors
+//-------------------------------------------------------
+
+-
+  var colors = [
+    { key: '$color-primary', color: '#00a0ff'},
+    { key: '$color-primary2', color: '#0090e6'},
+    { key: '$color-brand', color: '#75bcde'},
+    { key: '$color-blue', color: '#e8f6fc'},
+    { key: '$color-blue2', color: '#f4fbfe'},
+    { key: '$color-gray', color: '#f6f8f7'},
+    { key: '$color-accent', color: '#e3a807'},
+    { key: '$color-attention', color: '#f60856'},
+    { key: '$color-attention2', color: 'rgba(246, 8, 86, 0.1)'},
+    { key: '$color-light', color: '#e1e4e8'},
+    { key: '$color-title', color: '#092e44'},
+    { key: '$color-button', color: '#e4e4e4'},
+    { key: '$color-white', color: '#fff'},
+    { key: '$color-content', color: '#363636'},
+    { key: '$color-black', color: '#000'},
+    { key: '$color-info-sub', color: '#b8babb'},
+    { key: '$color-info-main', color: '#737678'},
+    { key: '$color-link', color: '#6ab9e7'},
+    { key: '$color-green', color: '#46be28'},
+    { key: '$gradient', color: 'linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%), #f4f4f4'},
+  ];
+
+.row
+  each val in colors
+    .col-2
+      .code-example
+        .demo(style=`background: ${val.color}; width: 100%; height: 100px`)
+        pre
+          code.language-scss
+            | #{val.key}: #{val.color}

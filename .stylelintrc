@@ -1,0 +1,49 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended-scss"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "order/order": [
+      "custom-properties",
+      "declarations"
+    ],
+    "at-rule-empty-line-before": null,
+    "block-closing-brace-newline-after": [
+      "always",
+      {
+        "ignoreAtRules": ["if", "else"]
+      }
+    ],
+    "selector-no-qualifying-type": [
+      null
+    ],
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": [ "first-nested"]
+      }
+    ],
+    "max-nesting-depth": 5,
+    "selector-pseudo-element-colon-notation": "single",
+    "declaration-no-important": null,
+    "font-family-name-quotes": "always-where-recommended",
+    "font-weight-notation": "numeric",
+    "function-url-no-scheme-relative": true,
+    "function-url-quotes": "always",
+    "string-quotes": "single",
+    "max-empty-lines": 2,
+    "media-feature-name-no-vendor-prefix": true,
+    "number-leading-zero": "always",
+    "property-no-vendor-prefix": true,
+    "selector-attribute-quotes": "always",
+    "selector-no-vendor-prefix": true,
+    "value-keyword-case": "lower",
+    "value-no-vendor-prefix": true,
+    "no-descending-specificity": null,
+    "declaration-empty-line-before": "never"
+  }
+}

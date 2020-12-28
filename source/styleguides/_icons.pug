@@ -1,0 +1,42 @@
+include ../modules/common/_icons
+
++heading({
+ title: 'SVG Icon from client design',
+ type: 'h3'
+})
+
+-
+  var listIconsSVG = [
+    'icon-chevron-down',
+    'icon-chevron-left',
+    'icon-chevron-right',
+    'icon-chevron-double-right',
+    'icon-chevron-double-left',
+    'icon-arrow-up',
+    'icon-user',
+    'icon-calendar',
+    'icon-check',
+    'icon-close',
+    'icon-menu',
+    'icon-plus',
+    'icon-search',
+    'icon-share',
+    'icon-download',
+    'icon-upload',
+    'icon-store'
+  ]
+
+.row.mt-2.icon-list
+  each val in listIconsSVG
+    .col-2
+      .code-example
+        .demo.text-center
+          +icon-svg(`${val}`)
+        pre.language-pug
+          code
+            |+icon-svg('#{val}')
+
+.row
+  .col-12
+    h3 Suggest use
+      a.mx-2(href="https://ionicons.com/") ionicons

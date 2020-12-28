@@ -1,0 +1,186 @@
+// ======================================================
+// Components :: Checkbox
+// ======================================================
+
+.checkbox-field,
+.radio-field {
+  $this: &;
+  position: relative;
+  margin-right: 10px;
+  white-space: nowrap;
+  font-size: $font-size-small;
+
+  &.disabled {
+    pointer-events: none;
+
+    .checkbox-field__label {
+      &:after {
+        background: $color-gray;
+        border-color: $color-light;
+      }
+    }
+  }
+
+  &__label {
+    font-size: $font-size-small;
+    color: $color-content;
+    padding-left: 5px;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      @include transition();
+    }
+
+    &:after {
+      left: 0;
+      top: 0;
+      border: 1px solid $color-light;
+      background-color: $color-white;
+      z-index: z(base);
+    }
+
+    &:before {
+      opacity: 0;
+      z-index: z(upper);
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__input {
+    opacity: 0;
+    position: relative;
+    z-index: z(upper);
+
+    &:checked {
+      + .checkbox-field__label,
+      + .radio-field__label {
+        &:before {
+          opacity: 1;
+        }
+
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+.checkbox-field {
+  $this: &;
+
+  &--bg {
+    width: 500px;
+    min-height: 80px;
+
+    &__bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: z(base);
+      background-color: $color-white;
+      border-radius: $border-radius-medium;
+      @include transition();
+    }
+
+    .checkbox-field__label {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: z(upper);
+      padding: 26px 18px;
+      color: $color-info-main;
+      text-align: center;
+      font-size: $font-size-xl;
+
+      &:before,
+      &:after {
+        top: 32px;
+        left: 60px;
+        @include square(16px);
+      }
+    }
+  }
+
+  &__input {
+    &:checked {
+      + .checkbox-field__label {
+        &:before,
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.checkbox-field--bg {
+    .checkbox-field__input {
+      &:checked {
+        + .checkbox-field__label {
+          color: $color-white;
+          font-weight: $font-weight-bold;
+        }
+
+        ~ .checkbox-field--bg__bg {
+          background-color: $color-brand;
+        }
+      }
+    }
+  }
+
+  &__label {
+    &:after {
+      border-radius: 2px;
+      @include square(15px);
+    }
+
+    &:before {
+      background: url('../images/icon-check.svg') no-repeat center;
+      background-size: 11px 8px !important;
+      opacity: 0;
+      @include square(15px);
+    }
+  }
+}
+
+.radio-field {
+  $this: &;
+
+  &__label {
+    &:before,
+    &:after {
+      @include circle(16px);
+    }
+
+    &:before {
+      background: url('../images/icon-radio-check.svg') no-repeat center;
+    }
+  }
+}
+
+input[type='radio']:disabled {
+  & + label {
+    &:before {
+      background: url('../images/icon-radio-check-disable.svg') no-repeat center;
+    }
+
+    &:after {
+      background: $color-gray-disabled;
+    }
+  }
+}
+
+input[type='checkbox']:disabled {
+  & + label {
+    &:before {
+      background: url('../images/icon-check-disabled.svg') no-repeat center;
+    }
+  }
+}

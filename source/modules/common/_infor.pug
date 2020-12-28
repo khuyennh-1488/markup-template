@@ -1,0 +1,10 @@
+//-------------------------------------------------------
+//- Common :: Infor
+//-------------------------------------------------------
+
+mixin infor(items)
+  ul.infor&attributes(attributes)
+    each item in items
+      li.infor__item
+        p.infor__title= item.title
+        p.infor__content !{item.content}

@@ -1,0 +1,46 @@
+// We architecting this project follow as the "7-1 Pattern" (7 folders, 1 file)
+// For more detail about this pattern
+// (https://sass-guidelin.es/#the-7-1-pattern)
+
+// 1. Vendors
+// ----------
+// https://getbootstrap.com/docs/4.0/getting-started/theming/#sass
+// Need vendors go first because we inherit all of sass files of Bootstrap 4
+@import 'abstracts/color-customize';
+@import 'abstracts/bootstrap';
+
+// 2. Abstracts
+// ------------
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/functions';
+
+// 3. Base
+// -------
+@import 'base/global';
+@import 'base/utility';
+
+// 4. Layout
+// ---------
+@import 'layout/common';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/main';
+@import 'layout/sidebar';
+
+// 5. Components
+// -------------
+@import 'components/typo';
+@import 'components/forms/field';
+@import 'components/forms/buttons';
+@import 'components/forms/checkbox';
+@import 'components/tables';
+@import 'components/icons';
+
+// 6. Pages
+// --------
+@import 'pages/home';
+
+// 7. Themes
+// ---------
+// We just have only 1 theme in this project

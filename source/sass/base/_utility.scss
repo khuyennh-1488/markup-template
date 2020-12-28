@@ -1,0 +1,125 @@
+/* stylelint-disable */
+
+.u-reset-width {
+  max-width: none !important;
+  min-width: 0 !important;
+  width: auto !important;
+}
+
+@for $i from 10 through 100 {
+  .u-width-#{$i*5} {
+    width: #{$i * 5}px !important;
+  }
+}
+
+@for $i from 1 through 10 {
+  .u-height-#{$i*5} {
+    min-height: #{$i * 5}px !important;
+  }
+}
+
+@for $i from 1 through 20 {
+  .u-pt-#{$i*5} {
+    padding-top: #{$i * 5}px !important;
+  }
+
+  .u-pb-#{$i*5} {
+    padding-bottom: #{$i * 5}px !important;
+  }
+
+  .u-pl-#{$i*5} {
+    padding-left: #{$i * 5}px !important;
+  }
+
+  .u-pr-#{$i*5} {
+    padding-right: #{$i * 5}px !important;
+  }
+
+  .u-mt-#{$i*5} {
+    margin-top: #{$i * 5}px !important;
+  }
+
+  .u-mb-#{$i*5} {
+    margin-bottom: #{$i * 5}px !important;
+  }
+
+  .u-ml-#{$i*5} {
+    margin-left: #{$i * 5}px !important;
+  }
+
+  .u-mr-#{$i*5} {
+    margin-right: #{$i * 5}px !important;
+  }
+}
+
+.u-decoration-underline {
+  text-decoration: underline !important;
+}
+
+.u-text-info-sub {
+  color: $color-info-sub !important;
+}
+
+.u-text-gray {
+  color: $color-info-main !important;
+}
+
+.u-text-brand {
+  color: $color-brand !important;
+}
+
+.u-text-accent {
+  color: $color-accent !important;
+}
+
+.u-font-10 {
+  font-size: $font-size-xs !important;
+}
+
+.u-font-12 {
+  font-size: $font-size-small !important;
+}
+
+.u-font-14 {
+  font-size: $font-size-base !important;
+}
+
+.u-font-16 {
+  font-size: $font-size-medium !important;
+}
+
+.rotate-180 {
+  transform: rotate(180deg) !important;
+}
+
+.u-v-top {
+  vertical-align: top !important;
+}
+
+.u-bg-blue2 {
+  background: $color-blue2 !important;
+}
+
+.u-bg-blue {
+  background: $color-blue !important;
+}
+
+.u-bg-white {
+  background: $color-white !important;
+}
+
+.u-bg-gray {
+  background: $color-gray !important;
+}
+
+.text-cyan {
+  color: $color-brand !important;
+}
+
+.text-info {
+  color: $color-title !important;
+}
+
+.text-content {
+  color: $color-content !important;
+}

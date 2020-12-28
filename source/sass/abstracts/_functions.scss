@@ -1,0 +1,20 @@
+// ======================================================
+// Abstracts :: Functions
+// ======================================================
+
+// z-index management
+// ======================================================
+// Example:
+//
+// .class {
+//   z-index: z(base);
+// }
+@function z($name) {
+  @if (map-has-key($z-indexes, $name)) {
+    @return map-get($z-indexes, $name);
+  }
+
+  @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+
+  @return null;
+}

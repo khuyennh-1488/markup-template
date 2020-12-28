@@ -1,0 +1,46 @@
+{
+  "pageList": {
+    "data": [
+      {
+        "title": "Style Guides",
+        "url": "styleguides"
+      },
+      {
+        "title": "001",
+        "categories": "List",
+        "ticketID": "DEV-001",
+        "url": "001"
+      },
+      {
+        "title": "003",
+        "categories": "Edit",
+        "ticketID": "DEV-001",
+        "url": "003"
+      },
+      {
+        "title": "004",
+        "categories": "Modal",
+        "ticketID": "DEV-001",
+        "url": "004"
+      },
+      {
+        "title": "005",
+        "categories": "Popup",
+        "ticketID": "DEV-001",
+        "url": "005"
+      },
+      {
+        "title": "Modal",
+        "categories": "Gallery",
+        "ticketID": "003, 006, 007, 008, 011",
+        "url": "modal"
+      },
+      {
+        "title": "Categories",
+        "categories": "Categories",
+        "ticketID": "DEV-123",
+        "url": "categories"
+      }
+    ]
+  }
+}

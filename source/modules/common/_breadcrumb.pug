@@ -1,0 +1,15 @@
+//-------------------------------------------------------
+//- Common :: Breadcrumb
+//-------------------------------------------------------
+
+mixin breadcrumb({ routes })
+  ol.breadcrumb&attributes(attributes)
+    each route, index in routes
+      if index === 0
+        li.breadcrumb-item
+          p= route.name
+      else
+        li.breadcrumb-item
+          a(href= route.path)= route.name
+    li.breadcrumb-item
+      a(href='#') TOP

@@ -1,0 +1,147 @@
+.row
+  .col-12
+    .code-example
+      .demo
+        table.table.table-custom
+          thead
+            tr
+              th Name
+              th(width="100") Age
+              th First
+              th Last
+              th Price
+              th.text-left Handle
+          tbody
+            tr
+              td.text-left Mark Otto
+              td 10
+              td Mark
+              td Otto
+              td.text-right 80,000
+              td.text-left @mdo
+            tr
+              td.text-left Jacob Thornton
+              td 20
+              td Jacob
+              td Thornton
+              td.text-right 80,000
+              td.text-left @fat
+            tr
+              td.text-left Larry the Bird
+              td 30
+              td Larry
+              td the Bird
+              td.text-right 80,000
+              td.text-left @twitter
+      pre.language-pug
+        code
+          | //- add class ".table-custom--row-small" to row height 31px
+          |
+          | table.table.table-custom
+          |   thead
+          |     tr
+          |       th Name
+          |       th(width="100") Age
+          |       th First
+          |       th Last
+          |       th Price
+          |       th.text-left Handle
+          |   tbody
+          |     tr
+          |       td.text-left Mark Otto
+          |       td 10
+          |       td Mark
+          |       td Otto
+          |       td.text-right 80,000
+          |       td.text-left @mdo
+          |     tr
+          |       td.text-left Jacob Thornton
+          |       td 20
+          |       td Jacob
+          |       td Thornton
+          |       td.text-right 80,000
+          |       td.text-left @fat
+          |     tr
+          |       td.text-left Larry the Bird
+          |       td 30
+          |       td Larry
+          |       td the Bird
+          |       td.text-right 80,000
+          |       td.text-left @twitter
+
+
+  .col-12
+    .code-example
+      .demo
+        table.table.table-custom
+          thead
+            tr
+              th(width="70") #
+              th First
+              th Last
+              th Handle
+          tbody
+            tr
+              td(rowspan="3") 1
+              td Mark
+              td Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto
+              td @mdo
+            tr
+              td Jacob
+              td Thornton
+              td @fat
+            tr
+              td Larry
+              td the Bird
+              td @twitter
+          tbody
+            tr
+              td(rowspan="3") 2
+              td Mark
+              td Otto
+              td @mdo
+            tr
+              td Jacob
+              td Thornton
+              td @fat
+            tr
+              td Larry
+              td the Bird
+              td @twitter
+      pre.language-pug
+        code
+          | table.table.table-custom
+          |   thead
+          |     tr
+          |       th(width="70") #
+          |       th First
+          |       th Last
+          |       th Handle
+          |   tbody
+          |     tr
+          |       td(rowspan="3") 1
+          |       td Mark
+          |       td Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto Otto | Otto Otto Otto Otto
+          |       td @mdo
+          |     tr
+          |       td Jacob
+          |       td Thornton
+          |       td @fat
+          |     tr
+          |       td Larry
+          |       td the Bird
+          |       td @twitter
+          |   tbody
+          |     tr
+          |       td(rowspan="3") 2
+          |       td Mark
+          |       td Otto
+          |       td @mdo
+          |     tr
+          |       td Jacob
+          |       td Thornton
+          |       td @fat
+          |     tr
+          |       td Larry
+          |       td the Bird
+          |       td @twitter

@@ -1,0 +1,399 @@
+// ======================================================
+// Components :: Buttons
+// ======================================================
+
+.button {
+  $this: &;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-small;
+  text-align: center;
+  border-radius: $border-radius-base;
+  border: 1px solid transparent;
+  @include transition();
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &--big {
+    width: 180px;
+    height: 40px;
+  }
+
+  &--bold {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-medium;
+  }
+
+  &--bg-blue {
+    color: $color-primary;
+    background: $color-blue;
+    border-color: $color-blue;
+
+    &:hover {
+      border-color: $color-primary;
+    }
+  }
+
+  &--gray {
+    color: $color-info-main;
+    background-color: $color-button;
+    cursor: unset !important;
+
+    &:hover {
+      background: $gradient;
+      color: $color-info-sub;
+      border-color: $color-light;
+    }
+  }
+
+  &--gray2 {
+    background: $color-button;
+    color: $color-white;
+
+    &:hover {
+      background: $gradient;
+      color: $color-info-sub;
+      border-color: $color-light;
+    }
+  }
+
+  &--gray3 {
+    background: rgba($color-info-main, 0.1);
+    color: $color-info-main;
+
+    &:hover {
+      background: $gradient;
+      color: $color-info-sub;
+      border-color: $color-light;
+    }
+  }
+
+  &--danger {
+    background: rgba($color-attention, 0.1);
+    color: $color-attention;
+  }
+
+  &--brand {
+    min-height: 30px;
+    border: 0;
+    color: $color-brand;
+    background: $color-blue2;
+  }
+
+  &--primary {
+    color: $color-white;
+    background: $color-primary;
+    border-color: $color-primary;
+
+    &:hover {
+      color: $color-white;
+      background: $color-primary2;
+    }
+  }
+
+  &--cancel {
+    background: $gradient;
+    color: $color-info-sub;
+    border-color: $color-light;
+
+    &:hover {
+      color: $color-info-main;
+      background-color: $color-button;
+    }
+  }
+
+  &--line {
+    min-width: 80px;
+    min-height: 30px;
+    margin: 0 8px;
+    background: $color-white;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+
+  &--line-blue {
+    border-color: $color-primary;
+    color: $color-primary;
+
+    &:hover {
+      background-color: $color-primary;
+    }
+  }
+
+  &--line-red {
+    border-color: $color-attention;
+    color: $color-attention;
+
+    &:hover {
+      background: $color-attention;
+    }
+  }
+
+  &--line-yellow {
+    border-color: $color-accent;
+    color: $color-accent;
+
+    &:hover {
+      background: $color-accent;
+    }
+  }
+
+  &--line-black {
+    border-color: $color-info-main;
+    color: $color-info-main;
+
+    &:hover {
+      background: $color-info-main;
+    }
+  }
+
+  &--search-line {
+    display: flex;
+    align-items: center;
+    background: $color-white;
+    color: $color-primary;
+    font-size: $font-size-small;
+
+    span {
+      padding-right: 8px;
+    }
+
+    .minicon {
+      @include square(12px);
+    }
+  }
+
+  &--prev,
+  &--next {
+    display: flex;
+    align-items: center;
+    background: $color-white;
+
+    #{$this}-icon-prev,
+    #{$this}-icon-next {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include circle(24px);
+      background: $color-brand;
+
+      .minicon {
+        @include square(10px);
+        color: $color-white;
+      }
+    }
+
+    span {
+      color: $color-info-main;
+      font-size: $font-size-small;
+    }
+  }
+
+  &--prev {
+    #{$this}-icon-prev {
+      transform: rotate(180deg);
+    }
+
+    span {
+      margin-left: 8px;
+    }
+  }
+
+  &--next {
+    span {
+      margin-right: 8px;
+    }
+  }
+
+  &--icon {
+    white-space: nowrap;
+    background: $color-white;
+
+    &-primary {
+      color: $color-primary;
+    }
+
+    &-warning {
+      color: $color-attention;
+    }
+
+    &-left {
+      flex-direction: row-reverse;
+
+      .icon-button {
+        margin-right: 8px;
+        margin-left: 0 !important;
+      }
+    }
+
+    &:hover {
+      opacity: 1;
+
+      span.u-decoration-underline {
+        text-decoration: none !important;
+      }
+
+      .line-effect {
+        color: $color-primary;
+
+        &:before {
+          width: 0;
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .icon-button {
+    margin-left: 8px;
+    line-height: 1;
+  }
+
+  &--download {
+    min-width: 135px;
+    color: $color-primary;
+    padding-left: 20px;
+    background-size: 12px;
+
+    &:hover {
+      background: $color-primary;
+    }
+  }
+
+  &--upload {
+    position: relative;
+    min-width: 135px;
+    min-height: 30px;
+    color: $color-white;
+    background: url('../images/icon-upload.svg') no-repeat 10px center $color-primary;
+    background-size: 12px;
+    padding-left: 20px;
+    overflow: hidden;
+
+    &:hover {
+      background-color: $color-primary2;
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      bottom: 0;
+      z-index: z(title-page);
+      cursor: pointer;
+    }
+  }
+
+  &--square {
+    position: relative;
+    min-width: 135px;
+    min-height: 30px;
+    color: $color-white;
+    background-color: $color-primary;
+
+    span {
+      &:before {
+        content: '';
+        position: absolute;
+        left: 9px;
+        top: 6px;
+        @include square(15px);
+        border: 1px solid $color-light;
+        border-radius: 2px;
+        background-color: $color-white;
+        z-index: z(base);
+      }
+    }
+  }
+
+  &--disabled {
+    border-color: $color-button !important;
+    color: $color-button !important;
+    pointer-events: none;
+  }
+}
+
+.line-effect {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background: $color-primary;
+    margin: auto;
+    @include transition();
+  }
+
+  &:hover {
+    color: $color-primary;
+
+    &:before {
+      width: 0;
+      opacity: 0;
+    }
+  }
+}
+
+.link {
+  color: $color-primary;
+  font-size: $font-size-base;
+  letter-spacing: 1px;
+  display: inline-block;
+
+  &--small {
+    font-size: $font-size-small;
+  }
+}
+
+.button-edit {
+  display: inline-block;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.link-search {
+  display: flex;
+  align-items: center;
+  color: $color-primary;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-primary;
+    text-decoration: none;
+  }
+
+  span {
+    margin-right: 8px;
+  }
+}
+
+[class^='button-icon'] {
+  line-height: 1;
+}
+
+.button-plus {
+  .minicon {
+    @include square(12px);
+  }
+}
+
+.button-icon-download {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}

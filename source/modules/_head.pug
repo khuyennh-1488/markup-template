@@ -1,0 +1,14 @@
+//-------------------------------------------------------
+//- Modules :: Head
+//- All content in <head>...</head>
+//-------------------------------------------------------
+
+mixin head(title)
+  title= title
+  meta(charset='utf-8')
+  meta(name='description' content=title)
+  meta(name='keywords' content=title)
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(rel='icon' href='/favicon.ico')
+  link(rel='stylesheet' href='css/customize-root.css')
+  link(rel='stylesheet' href='css/main.css')

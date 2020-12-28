@@ -1,0 +1,46 @@
+//-------------------------------------------------------
+//- Modules :: Sidebar
+//-------------------------------------------------------
+-
+  var defaultMenu = [
+    { label: '運用管理', items: ['契約検索', 'マスタ管理', '申し込み登録'] },
+    { label: '経理・歩合', items: ['預かり金管理表', '歩合管理表'] },
+  ]
+mixin sidebar(itemsMenu= defaultMenu, info=false)
+  .sidebar.sidebar--info
+    .sidebar__block.active
+      .sidebar__content
+        if info
+          .sidebar__header
+            .sidebar__header-overview
+              +icon-svg('icon-user').sidebar__header__avatar
+              p.sidebar__header__text.text-info 大久保 麻里子
+                span 様
+            h6.sidebar__header-status 入金待ち
+        .sidebar__body
+          if info
+            .sidebar__info
+              .sidebar__info-item
+                p.sidebar__info-item__left 契約no.
+                a(href='#').sidebar__info-item__right.sidebar__info-item__right--contract 00000000
+              .sidebar__info-item
+                p.sidebar__info-item__left 建物
+                p.sidebar__info-item__right NAKAO MS
+                  br
+                  |建物名が入ります
+              .sidebar__info-item
+                p.sidebar__info-item__left 号室
+                p.sidebar__info-item__right 102
+              .sidebar__info-item
+                p.sidebar__info-item__left 管理区分
+                p.sidebar__info-item__right 自社
+              .sidebar__info-item
+                p.sidebar__info-item__left 用途区分
+                p.sidebar__info-item__right 住居用
+          .sidebar__menu#accordion
+            each menu, index in itemsMenu
+              .sidebar__menu-item
+                h3.sidebar__menu-head(data-toggle='collapse' data-target='#collapse'+index)= menu.label
+                .collapse.sidebar__menu-content(id='collapse'+index)
+                  each item, i in menu.items
+                    a.sidebar__menu-link.js-anchor-bookmark(href='#content'+index+i)= item

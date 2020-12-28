@@ -1,0 +1,26 @@
+include ../page-list/_page-list
+include ../_head
+include ../_header
+include ../_footer
+include ../_sidebar
+include ../common/_forms
+include ../common/_button
+include ../common/_typo
+include ../common/_icons
+
+doctype html
+html(lang='en')
+  head
+    block head
+
+  body
+    block body
+
+    block modalLoad
+
+    .flash-message-group
+      block flash-message
+
+
+    block scripts
+      script(src='js/main.js')

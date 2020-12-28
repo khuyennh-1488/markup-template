@@ -1,0 +1,114 @@
+//- Textarea field
+//- @label {string} - label field
+//- @id {string} - input id & label for
+//- @placeholder {string} - input placeholder
+//- @value {string} - input value
+//- @size {string class utility} - set width
+//- @required {boolean} - label required field
+//- @error {boolean} - error text validate
+mixin textarea-field({ label=false, id='field', error=false, name='', required=false, placeholder=false, value='', size='', disabled=false, readOnly=false})
+  .form-group.form-group--input&attributes(attributes)
+    if label
+      .form-group__text.label-field
+        label.form-group__label(for=id)= label
+        if required
+          span.label-field__required 必須
+    .form-group__field
+      textarea.form-control(
+        type=type
+        id=id
+        name= name
+        placeholder=placeholder
+        class=size ? size : ''
+        class= readOnly ? 'read-only' : null
+        class= disabled ? 'disabled' : null
+      )= value
+      if error
+        span.text-danger=error
+
+//- Input field
+//- @... extends 'Textarea field'
+//- @type {string: [text / password / email / number...]} - input type
+//- @readOnly {boolean} - input read only
+//- @short {boolean} - input small size
+//- @prefix {string} - prefix text
+//- @suffix {string} - suffix text
+//- @red {boolean} - value color red
+//- @borderRed {boolean} - border color red
+//- valueRight {boolean} - value of input is right
+//- @dataRadio - used to open / close input (ex: dataRadio: 'toggle-input-something')
+//- @maxLength attribute maxlength of input
+mixin input-field({ label=false, id='field', readOnly=false, error=false, name='', required=false, type='text', placeholder=false, short=false, value=false, borderRed=false,prefix='', suffix='', red=false, size='', valueRight = false, disabled = false, dataRadio= '', maxLength=0 })
+  .form-group.form-group--input&attributes(attributes)
+    if label
+      .form-group__text.label-field
+        label.form-group__label(for=id)= label
+        if required
+          span.label-field__required 必須
+    .form-group__field
+      .d-flex.align-items-center
+        if prefix
+          span.prefix.text-content !{prefix}
+        input.form-control(
+          type=type,
+          id=id,
+          placeholder= placeholder,
+          disabled= disabled ? 'true' : null,
+          name=name,
+          maxlength= maxLength > 0 ? maxLength : null
+          data-radio= dataRadio
+          class= short ? 'short' : null
+          class= readOnly ? 'read-only' : null
+          class= disabled ? 'disabled' : null
+          class= error ? 'error' : null
+          class= borderRed ? 'error text-error' : ''
+          class= red ? 'text-error' : ''
+          value= value ? value : ''
+          class= size ? size : null
+          class= valueRight ? 'text-right' : ''
+        )
+        if suffix
+          span.suffix.text-content= suffix
+      if error
+        span.text-danger=error
+
+//- Checkbox / Radio
+//- @value {object: [{item}] - option select
+//- @label {string} - label field
+//- @name {string} - name field
+//- @id {string} - input id & label for
+//- @checked {boolean} - checked
+//- @isDisabled {boolean} - disabled field
+//- @dataRadio - used to open / close input (ex: dataRadio: 'toggle-input-something')
+//- @withBackground {boolean} - checkbox has background
+mixin checkbox-field({ value='', id='field', checked=false, name='field', withBackground=false, disabled=false, customToRadio=false })
+  .checkbox-field(
+    class= withBackground ? 'checkbox-field--bg' : ''
+    class=disabled ? 'disabled' : null
+    disabled= disabled ? 'true' : null,
+  )&attributes(attributes)
+    input.checkbox-field__input(
+      type= customToRadio ? 'radio' : 'checkbox',
+      name=name,
+      value=value,
+      checked=checked,
+      id=id,
+      disabled=disabled
+    )
+    label.checkbox-field__label(for=id)= value
+    if withBackground
+      .checkbox-field--bg__bg
+
+mixin radio-field({ value='', id='field', checked=false, name='field', jsToggle= '', dataRadio= '', disabled= false })
+  .radio-field&attributes(attributes)
+    input.radio-field__input(type='radio', name=name, value=value, checked=checked id=id, data-radio= dataRadio, disabled= disabled)
+    label.radio-field__label(for=id, class= jsToggle)= value
+
+//- Label status
+//- @text {string} - label text
+//- @color {string: [red / yellow / blue]} - label color
+mixin label-tag({ text='', color='' })
+  span.label-tag(
+    class=color ? `label-tag--${color}` : ''
+  )&attributes(attributes)
+    | !{text}

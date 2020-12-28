@@ -1,0 +1,70 @@
+{
+  "name": "project-name",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp dev",
+    "build": "gulp build",
+    "build:min": "gulp build --minify",
+    "lint:css": "stylelint --syntax scss \"source/sass/**/*.scss\"",
+    "lint:css:fix": "stylelint --syntax scss \"source/sass/**/*.scss\" --fix",
+    "lint:js": "eslint source/js/*.js",
+    "lint:js:fix": "eslint source/js/*.js --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "source/js/*.js": "npm run lint:js:fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^4.5.0",
+    "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cached": "^1.1.1",
+    "gulp-changed": "^4.0.2",
+    "gulp-cheerio": "^1.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-if": "^3.0.0",
+    "gulp-include": "^2.4.1",
+    "gulp-inject": "^5.0.5",
+    "gulp-jsbeautifier": "^3.0.0",
+    "gulp-load-plugins": "^2.0.3",
+    "gulp-merge-json": "^2.1.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-prettify": "^0.5.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-pug-inheritance": "^0.2.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-stylelint": "^9.0.0",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-svgmin": "^3.0.0",
+    "gulp-watch": "^5.0.1",
+    "husky": "^4.2.5",
+    "install": "^0.13.0",
+    "jquery": "^3.5.1",
+    "lint-staged": "^10.2.9",
+    "npm": "^3.10.6",
+    "postcss-assets": "^5.0.0",
+    "pug": "^2.0.0-beta6",
+    "stylelint": "^8.4.0",
+    "stylelint-config-recommended-scss": "^3.0.0",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-order": "^0.8.0",
+    "stylelint-scss": "^2.3.0"
+  },
+  "dependencies": {
+    "gulp-purgecss": "^2.3.0"
+  }
+}

@@ -1,0 +1,121 @@
+//-
+//- This page only for Frontend Developer
+
+extends modules/layout/_page-other
+
+block head
+  +head('Styleguides')
+block append head
+  link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/themes/prism.min.css")
+  script(src='https://cdn.jsdelivr.net/npm/prismjs@1.20.0/components/prism-core.min.js')
+  script(src='https://cdn.jsdelivr.net/npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js')
+
+  style.
+    .blue {
+      color: #00a0ff;
+    }
+    .code-example {
+      margin-bottom: 25px;
+    }
+    .code-example .demo {
+      box-sizing: border-box;
+      padding: 1.5rem;
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-radius: 0.25rem 0.25rem 0 0;
+    }
+    .code-example pre {
+      margin: 0;
+      padding: 15px;
+      border-radius: 0 0 0.25rem 0.25rem;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-top: 0;
+    }
+    .list-group-item {
+      color: #00a0ff;
+    }
+    .header-popup {
+      background: #e8f6fc;
+      padding-top: 10px;
+    }
+    .icon-list .minicon {
+      width: 32px;
+      height: 32px;
+    }
+
+block main
+
+  -
+    var components = [
+      {
+        id: 'colors',
+        title: 'Colors'
+      },
+      {
+        id: 'typo',
+        title: 'Typo'
+      },
+      {
+        id: 'forms',
+        title: 'Forms'
+      },
+      {
+        id: 'tables',
+        title: 'Tables'
+      },
+      {
+        id: 'icons',
+        title: 'Icons'
+      },
+    ];
+
+  .container-fluid
+    .row.justify-content-between.align-items-center.pt-4.pb-4
+      .col-auto.mr-auto
+        h2
+          span.blue [Project name]
+          |  - Style Guides
+      .col-auto
+        a.btn.btn-success.btn-sm(href="links.html") Back to list of page
+
+    .row
+      .col-12.col-lg-2.mb-5
+        #v-pills-tab.list-group(
+          role="tablist"
+          aria-orientation="vertical"
+          style="position: sticky; top: 20px"
+        )
+          each val, index in components
+            - var findFirstItem = index === 0
+            a(
+              data-toggle="pill"
+              role="tab"
+              aria-selected="true"
+              id=`v-pills-${val.id}-tab`
+              href=`#v-pills-${val.id}`
+              aria-controls=`v-pills-${val.id}`
+              class=findFirstItem ? 'list-group-item active' : 'list-group-item'
+            )= val.title
+      .col-12.col-lg-10
+        #v-pills-tabContent.tab-content
+          each val, index in components
+            - var findFirstItem = index === 0
+            div(
+              role="tabpanel"
+              id=`v-pills-${val.id}`
+              aria-labelledby=`v-pills-${val.id}-tab`
+              class=findFirstItem ? 'tab-pane fade show active' : 'tab-pane fade'
+            )
+              case val.id
+                when 'colors'
+                  include styleguides/_colors
+                when 'forms'
+                  include styleguides/_forms
+                when 'typo'
+                  include styleguides/_typo
+                when 'tables'
+                  include styleguides/_tables
+                when 'icons'
+                  include styleguides/_icons
+                default
+                  - throw new Error('"val.id" must be in "components" variable')

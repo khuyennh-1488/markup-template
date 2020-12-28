@@ -1,0 +1,53 @@
+//- Button
+//- @text {string} - text button
+//- @type {string [primary / cancel]} - type color button
+//- @disabled {boolean} - button disabled
+//- @big {boolean} - button big size
+//- @bold {boolean} - button font weight bold
+mixin button({ text = '', type = "primary", disabled = false, big = false, bold = false })
+  button.button(
+    class= type ? `button--${type}` : null
+    class= disabled ? 'button--disabled' : null
+    class= big ? 'button--big' : null
+    class= bold ? 'button--bold' : null
+    disabled= disabled ? true : null
+  )&attributes(attributes)
+    | !{text}
+
+//- Button line border
+//- @text {string} - text button
+//- @color {string [blue / red / black]} - color button
+//- @disabled {boolean} - button disabled
+//- @big {boolean} - button big size
+//- @bold {boolean} - button font weight bold
+mixin button-line({ text = '', color = 'blue', big = false, disabled = false, bold = false })
+  button.button(
+    class= color ? `button--line button--line-${color}` : null
+    class= disabled ? 'button--disabled': null
+    class= big ? 'button--big' : null
+    class= bold ? 'button--bold' : null
+  )&attributes(attributes)
+    | #{text}
+
+mixin link({text='いえらぶ', line= true, href='#', small=false})
+  a.link(
+    class= line ? 'line-effect' : ''
+    class= small ? 'link--small' : ''
+    href= href
+  )&attributes(attributes)= text
+
+mixin button-icon({ text='edit', color='primary', icon=false, iconColors=false, line=fasle, iconLeft=false, bold=false })
+  button.button.button--icon(
+    class= color ? `text-${color}` : ''
+    class = iconLeft ? 'button--icon-left' : ''
+  )&attributes(attributes)
+    span(
+      class= line ? 'line-effect' : ''
+      class= bold ? 'font-weight-bold' : ''
+    )= text
+    if iconColors
+      .icon-button
+        +icon-bg(iconColors)
+    if icon
+      .icon-button
+        +icon-svg(`icon-${icon}`)

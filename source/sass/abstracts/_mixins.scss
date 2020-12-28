@@ -1,0 +1,187 @@
+// ======================================================
+// Abstracts :: Mixins
+// ======================================================
+
+// Responsive breakpoint down (PC -> SP)
+// ======================================================
+// Example:
+//
+// .block {
+//   background-color: green;
+//
+//   @include breakpoint-down(desktop) {
+//     background-color: red;
+//   }
+// }
+$breakpoints: (
+  'desktop'   : (max-width: 1199.98px),
+  'tablet'    : (max-width: 991.98px),
+  'phone'     : (max-width: 767.98px),
+  'smallphone': (max-width: 575.98px),
+);
+
+@mixin breakpoint-down($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+      type-of($raw-query) == 'string',
+      unquote($raw-query),
+      inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+
+// Position
+// ======================================================
+// Example:
+//
+// .class {
+//   @include position(absolute, 10px, 10px, 10px, 10px);
+// }
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+
+// Width !== Height
+// ======================================================
+// Example:
+//
+// .class {
+//   @include size(10px, 20px);
+// }
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+
+// Width === Height
+// ======================================================
+// Example:
+//
+// .class {
+//   @include square(10px);
+// }
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+
+// Width === Height + Border Radius
+// ======================================================
+// Example:
+//
+// .class {
+//   @include circle(10px);
+// }
+@mixin circle($size) {
+  @include size($size, $size);
+  border-radius: 50%;
+}
+
+
+// Reset UL OL
+// ======================================================
+// Example:
+//
+// .class {
+//   @include list-unstyled();
+// }
+@mixin list-unstyled() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+// Truncate oneline
+// ======================================================
+// Already supported in Bootstrap 4 mixin: @include text-truncate()
+// Example:
+//
+// .class {
+//   @include truncate-oneline();
+// }
+@mixin truncate-oneline() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+// Truncate multiline with CSS3
+// ======================================================
+// Example:
+//
+// .class {
+//   @include truncate-multiline-new(3);
+// }
+@mixin truncate-multiline-new($line-number) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* stylelint-disable-next-line value-no-vendor-prefix */
+  display: -webkit-box;
+  /* stylelint-disable property-no-vendor-prefix */
+  -webkit-line-clamp: $line-number;
+
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+}
+
+
+// Truncate multiline with CSS2
+// Example:
+//
+// .class {
+//   @include truncate-multiline-old({ $line-number: 2 });
+// }
+@mixin truncate-multiline-old($line-height: 1.2em, $line-number: 1, $bg-color: $color-white) {
+  overflow: hidden;
+  position: relative;
+  line-height: $line-height;
+  max-height: $line-height * $line-number;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bg-color;
+  }
+}
+
+// Transition
+// ======================================================
+// Example:
+//
+// .class {
+//   @include transition();
+// }
+@mixin transition($duration: 0.35s) {
+  transition: $duration;
+}

@@ -1,0 +1,74 @@
+// ======================================================
+// Base :: Global like html, body, img, a, ul
+// ======================================================
+
+body {
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  font-weight: $font-weight-base;
+  scroll-behavior: smooth;
+}
+
+img {
+  vertical-align: middle;
+}
+
+a {
+  color: $color-primary;
+  transition: 0.35s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 0;
+    box-shadow: none;
+    text-decoration: none;
+  }
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+b,
+strong {
+  font-weight: $font-weight-bold;
+}
+
+:-ms-input-placeholder {
+  color: $color-info-sub !important;
+}
+
+::placeholder {
+  color: $color-info-sub !important;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-brand;
+}
