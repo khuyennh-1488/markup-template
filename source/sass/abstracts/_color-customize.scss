@@ -3,8 +3,8 @@
 // ======================================================
 
 // Colors
-$color-primary: #00a0ff;
-$color-primary2: #0090e6;
+$color-primary: #3277ba;
+$color-primary2: #1b84ff;
 $color-brand: #75bcde;
 $color-blue: #e8f6fc;
 $color-blue2: #f4fbfe;
@@ -25,6 +25,31 @@ $color-green: #46be28;
 $color-gray-disabled: #f4f4f4;
 $color-purple: #5f539a;
 
+$white: #fff;
+$black: #000;
+
+$primary-100: #ebf1f8;
+$primary-400: #3e8cc8;
+$primary-600: #3457a6;
+$primary-700: #2a4685;
+
+$success-500: #11cda0;
+$success-600: #06bd91;
+
+$secondary-100: #e0e6f2;
+$secondary-300: #9ea3b6;
+$secondary-500: #3d476c;
+$secondary-600: #313956;
+
+$neutral-100: #f8fbfc;
+$neutral-200: #dfe3e5;
+$neutral-300: #bbc8d1;
+$neutral-400: #889ba9;
+$neutral-500: #6a8294;
+$neutral-600: #556876;
+$neutral-700: #37434d;
+$neutral-800: #222b30;
+
 // Colors override boostrap
 $primary: $color-primary;
 $danger: $color-attention;
@@ -38,6 +63,3 @@ $shadow: 0 1px 2px rgba(9, 46, 68, 0.3);
 $shadow2: 0 4px 8px rgba(9, 46, 68, 0.3);
 $shadow3: 2px 2px 4px 1px rgba(9, 46, 68, 0.2);
 $shadow4: 0 4px 8px rgba(9, 46, 68, 0.3);
-
-// Gradients
-$gradient: linear-gradient(180deg, rgba($color-white, 0.5) 0%, rgba($color-white, 0) 100%), #f4f4f4;

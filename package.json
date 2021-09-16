@@ -12,14 +12,6 @@
     "lint:js": "eslint source/js/*.js",
     "lint:js:fix": "eslint source/js/*.js --fix"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "source/js/*.js": "npm run lint:js:fix"
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {

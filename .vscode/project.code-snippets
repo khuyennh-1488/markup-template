@@ -1,4 +1,8 @@
 {
+  "breakpoint": {
+    "prefix": "br",
+    "body": ["@include breakpoint-down(tablet) {", "\t$1", "}"]
+  },
   "input field": {
     "prefix": "input-field",
     "body": [

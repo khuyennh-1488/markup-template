@@ -39,40 +39,6 @@
     }
   }
 
-  &--gray {
-    color: $color-info-main;
-    background-color: $color-button;
-    cursor: unset !important;
-
-    &:hover {
-      background: $gradient;
-      color: $color-info-sub;
-      border-color: $color-light;
-    }
-  }
-
-  &--gray2 {
-    background: $color-button;
-    color: $color-white;
-
-    &:hover {
-      background: $gradient;
-      color: $color-info-sub;
-      border-color: $color-light;
-    }
-  }
-
-  &--gray3 {
-    background: rgba($color-info-main, 0.1);
-    color: $color-info-main;
-
-    &:hover {
-      background: $gradient;
-      color: $color-info-sub;
-      border-color: $color-light;
-    }
-  }
-
   &--danger {
     background: rgba($color-attention, 0.1);
     color: $color-attention;
@@ -97,7 +63,6 @@
   }
 
   &--cancel {
-    background: $gradient;
     color: $color-info-sub;
     border-color: $color-light;
 
@@ -272,7 +237,6 @@
     min-width: 135px;
     min-height: 30px;
     color: $color-white;
-    background: url('../images/icon-upload.svg') no-repeat 10px center $color-primary;
     background-size: 12px;
     padding-left: 20px;
     overflow: hidden;

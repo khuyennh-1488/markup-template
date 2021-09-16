@@ -1,3 +1,174 @@
 // ======================================================
 // Pages :: Home
 // ======================================================
+
+.slide {
+  padding-top: 30px;
+
+  .main-slide {
+    background: #e8f3ff;
+    border-radius: 8px;
+  }
+
+  &__item {
+    display: flex !important;
+    justify-content: space-between;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__title {
+    color: $black;
+    font-size: $font-size-xl;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    color: $neutral-700;
+    font-size: $font-size-medium;
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+
+    @include breakpoint-down(tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      height: 48px;
+      margin-right: 15px;
+      padding: 10px 20px;
+      color: $white;
+      background: $secondary-500;
+
+      @include breakpoint-down(tablet) {
+        margin-right: 0;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+    }
+  }
+
+  .slide-left {
+    padding: 30px;
+
+    @include breakpoint-down(tablet) {
+      padding: 20px;
+    }
+  }
+
+  .slide-right {
+    max-height: 210px;
+    clip-path: polygon(30% 0, 100% 0%, 100% 100%, 0 100%);
+
+    @include breakpoint-down(tablet) {
+      max-height: 100%;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .next,
+  .prev {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    background: $secondary-100;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+      color: $white;
+      background: $secondary-500;
+    }
+  }
+
+  .prev {
+    left: -72px;
+  }
+
+  .next {
+    right: -72px;
+  }
+
+  .slick-dots {
+    li {
+      width: 10px;
+
+      button {
+        width: 10px;
+        padding: 0;
+      }
+
+      button:before {
+        font-size: 9px;
+        color: $neutral-300;
+        opacity: 1;
+      }
+
+      &.slick-active button:before {
+        color: $secondary-600;
+      }
+    }
+  }
+}
+
+.course {
+  padding: 20px 0;
+
+  .heading {
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 32px 28px;
+
+    @include breakpoint-down(tablet) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px 15px;
+    }
+
+    @include breakpoint-down(phone) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px 15px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 72px;
+
+    .btn-show-course {
+      padding: 8px 16px;
+      border-radius: 4px;
+      background-color: $neutral-200;
+      color: $neutral-800;
+      font-weight: $font-weight-bold;
+      font-size: 16px;
+      line-height: 24px;
+
+      .icon {
+        padding-left: 12px;
+      }
+    }
+  }
+}

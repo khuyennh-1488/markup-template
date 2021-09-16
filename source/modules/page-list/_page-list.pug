@@ -5,6 +5,7 @@
     { cat: 'List', color: '#ddbea9' },
     { cat: 'Edit', color: '#cb997e' },
     { cat: 'Popup', color: '#b7b7a4' },
+    { cat: 'Page', color: '#a5a58d' },
     { cat: 'Gallery', color: '#a5a58d' },
     { cat: 'Categories', color: '#6b705c' },
   ];
@@ -19,7 +20,7 @@ mixin column(data, num)
   td= data.categories
   td
     - if(data.ticketID != '')
-        a(href=`https://backlog.jp/view/${data.ticketID}` target='_blank' style='color: #fff; text-decoration: underline')= data.ticketID
+        a(href=`${data.ticketID}` target='_blank' style='color: #fff; text-decoration: underline') Link
   td
     - if(data.url != '')
         span.page-list__file-name= data.url + '.html'

@@ -4,3 +4,13 @@
 
 mixin header()
   header.header
+    .header__inner
+      .header__left
+        h1.logo
+          img(src="images/logo.png", alt="")
+        .header__form
+          span.material-icons-outlined search
+          input.form-control(type='email' placeholder='Bạn muốn tìm khóa học nào?')
+      .header__control
+        a.btn.btn--login(href="") Đăng nhập
+        a.btn.btn-primary(href="") Đăng ký

@@ -1,0 +1,31 @@
+//-------------------------------------------------------
+//- Modules :: Header
+//-------------------------------------------------------
+
+mixin header-login()
+  header.header
+    .header__inner
+      .header__left
+        h1.logo
+          img(src="images/logo.png", alt="")
+        .header__form
+          span.material-icons-outlined search
+          input.form-control(type='email' placeholder='Bạn muốn tìm khóa học nào?')
+        .header__courses
+          a(href="") Tất cả khóa học
+      .header__control.header__control--courses
+        a.header__control-course(href="")
+          span.material-icons-outlined menu_book
+          span.ml-2 Khóa học đã đăng ký
+        a.header__control-course(href="")
+          span.material-icons-outlined help
+          span.ml-2 Trợ giúp
+        .user-login#user-login(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+          .user-login__avatar T
+          span.material-icons-outlined expand_more
+          .user-login__dropdown.dropdown-menu.mt-3(aria-labelledby='user-login')
+            a.dropdown-item(href='#') Bảng thông tin
+            a.dropdown-item(href='#') Hồ sơ
+            a.dropdown-item(href='#') Tài khoản
+            a.dropdown-item(href='#') Đăng xuất
+

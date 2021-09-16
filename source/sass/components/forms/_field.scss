@@ -9,8 +9,8 @@
 
   &:focus {
     outline: none;
-    box-shadow: none;
-    border-color: $color-brand !important;
+    box-shadow: 0 0 8px rgba(27, 132, 255, 0.48) !important;
+    border-color: #dfe3e6 !important;
   }
 }
 
@@ -30,6 +30,8 @@
 }
 
 .form-group {
+  margin-bottom: 0;
+
   &__text {
     display: flex;
     align-items: flex-start;

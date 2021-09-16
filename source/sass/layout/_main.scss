@@ -2,6 +2,198 @@
 // Layout :: Footer
 // ======================================================
 
-.main {
-  background: $color-blue;
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.window-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  flex: 1;
+  margin-top: 72px;
+
+  @include breakpoint-down(tablet) {
+    margin-top: 120px;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 1px solid $neutral-200;
+  transition: 0.4s;
+
+  &:hover {
+    border: 1px solid $color-primary;
+
+    .card__detail {
+      width: 350px;
+      height: 380px;
+      opacity: 1;
+
+      &:after {
+        opacity: 1;
+      }
+
+      @include breakpoint-down(tablet) {
+        width: 250px;
+      }
+
+      @include breakpoint-down(phone) {
+        padding-left: 15px;
+      }
+
+      &__inner {
+        background: $white;
+        padding: 25px 15px 25px 25px;
+      }
+    }
+  }
+
+  &.last {
+    .card__detail {
+      left: auto;
+      right: 100%;
+      padding-right: 20px;
+
+      @include breakpoint-down(phone) {
+        padding-right: 15px;
+      }
+
+      &:after {
+        left: auto;
+        right: 10px;
+        border-right: 0;
+        border-left: 10px solid $white;
+
+        @include breakpoint-down(phone) {
+          right: 5px;
+        }
+      }
+    }
+  }
+
+  &__avatar {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    min-height: 140px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+      background: $neutral-100;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-large;
+    font-weight: $font-weight-base;
+    margin-bottom: 8px;
+    color: $neutral-700;
+  }
+
+  &__text {
+    color: $neutral-500;
+    font-size: $font-size-base;
+    font-weight: $font-weight-light;
+    margin-bottom: 5px;
+  }
+
+  &__detail {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: -1px;
+    left: 100%;
+    width: 0;
+    height: 0;
+    padding-left: 20px;
+    z-index: 9;
+    opacity: 0;
+    transition: 0.4s opacity;
+    filter: drop-shadow(0 4px 32px rgba(21, 42, 117, 0.24));
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-right: 10px solid $white;
+      border-bottom: 8px solid transparent;
+      opacity: 0;
+      transition: 0.4s opacity;
+
+      @include breakpoint-down(phone) {
+        left: 5px;
+      }
+    }
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    &__group {
+      padding-right: 10px;
+      overflow: auto;
+    }
+
+    .heading {
+      margin-bottom: 8px !important;
+    }
+
+    &__text {
+      color: $neutral-800;
+      font-size: $font-size-base;
+      margin: 20px 0 5px;
+    }
+
+    &__item {
+      position: relative;
+      padding-left: 30px;
+      margin-top: 10px;
+
+      &:after {
+        content: '\ef76';
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: $success-600;
+        font-family: 'Material Icons Outlined';
+        font-size: 20px;
+        line-height: 1;
+        transition: 0.4s;
+        border: 0;
+      }
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
 }

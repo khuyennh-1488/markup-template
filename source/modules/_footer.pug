@@ -4,3 +4,51 @@
 
 mixin footer()
   footer.footer
+    .container
+      .footer__inner
+        .footer__logo
+          img(src="images/logo-footer.png", alt="")
+        .footer__language
+          h3.footer__title Ngôn ngữ
+          .dropdown.js-language
+            button#language.btn.btn-language.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              .language-inner
+                img(src="images/ic-vn.png", alt="")
+                span.ml-3 Tiếng Việt
+            .dropdown-menu(aria-labelledby='language')
+              a.dropdown-item.choose(href='#')
+                .dropdown-item__inner
+                  img(src="images/ic-vn.png", alt="")
+                  span.ml-3 Tiếng Việt
+              a.dropdown-item(href='#')
+                .dropdown-item__inner
+                  img(src="images/ic-en.png", alt="")
+                  span.ml-3 English
+
+        .footer__contact
+          h3.footer__title Liên hệ
+          ul
+            li
+              a(href="") Blog
+            li
+              a(href="") Liên hệ
+        .footer__connect
+          h3.footer__title Kết nối  với chúng tôi
+          ul
+            li
+             a(href="")
+              img(src="images/ic-facebook.png", alt="")
+            li
+             a(href="")
+              img(src="images/ic-youtube.png", alt="")
+            li
+             a(href="")
+              img(src="images/ic-instagram.png", alt="")
+            li
+             a(href="")
+              img(src="images/ic-twitter.png", alt="")
+            li
+             a(href="")
+              img(src="images/ic-linkedin.png", alt="")
+      .footer__copyright Bản quyền thuộc về ©2021
+        span  EdTech Lab

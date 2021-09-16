@@ -6,38 +6,38 @@
         "url": "styleguides"
       },
       {
-        "title": "001",
-        "categories": "List",
+        "title": "Home",
+        "categories": "Page",
         "ticketID": "DEV-001",
-        "url": "001"
+        "url": "home"
       },
       {
-        "title": "003",
-        "categories": "Edit",
-        "ticketID": "DEV-001",
-        "url": "003"
+        "title": "Danh sách khoá học",
+        "categories": "Page",
+        "ticketID": "https://docs.google.com/spreadsheets/d/1hiQLGJXa85ydImFFZG_yP-OqJn_s5LYzkp2jBpS2bgE/edit#gid=491966454&range=B4:B5",
+        "url": "courses-list"
       },
       {
         "title": "004",
-        "categories": "Modal",
+        "categories": "Page",
         "ticketID": "DEV-001",
         "url": "004"
       },
       {
         "title": "005",
-        "categories": "Popup",
+        "categories": "Page",
         "ticketID": "DEV-001",
         "url": "005"
       },
       {
         "title": "Modal",
-        "categories": "Gallery",
+        "categories": "Page",
         "ticketID": "003, 006, 007, 008, 011",
         "url": "modal"
       },
       {
         "title": "Categories",
-        "categories": "Categories",
+        "categories": "Page",
         "ticketID": "DEV-123",
         "url": "categories"
       }

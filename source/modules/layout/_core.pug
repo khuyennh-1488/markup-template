@@ -1,8 +1,10 @@
 include ../page-list/_page-list
 include ../_head
 include ../_header
+include ../_header-login
 include ../_footer
 include ../_sidebar
+include ../common/_pagination
 include ../common/_forms
 include ../common/_button
 include ../common/_typo
@@ -14,13 +16,16 @@ html(lang='en')
     block head
 
   body
-    block body
+    .body
+      block body
 
-    block modalLoad
+      block modalLoad
 
-    .flash-message-group
-      block flash-message
+      .flash-message-group
+        block flash-message
 
 
     block scripts
+      script(src='https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js')
+      script(src='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js')
       script(src='js/main.js')

@@ -4,4 +4,173 @@
 
 .footer {
   $this: &;
+  padding: 50px 0 15px;
+  background: $neutral-100;
+
+  &__inner {
+    display: flex;
+
+    > * {
+      &:not(:last-child) {
+        padding-right: 20px;
+      }
+    }
+  }
+
+  &__logo {
+    padding-right: 100px !important;
+
+    @include breakpoint-down(desktop) {
+      padding-right: 50px;
+    }
+
+    @include breakpoint-down(tablet) {
+      max-width: 170px;
+      padding-right: 30px;
+    }
+
+    ~ div {
+      flex: 1;
+    }
+  }
+
+  &__title {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: $neutral-700;
+    font-weight: 500;
+    font-size: $font-size-medium;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 75px;
+      background: $secondary-300;
+    }
+  }
+
+  &__language {
+    .btn {
+      font-size: $font-size-base;
+      position: relative;
+      padding-right: 50px;
+
+      &:after {
+        content: '\e5cf';
+        position: absolute;
+        top: calc(50% - 10px);
+        right: 5px;
+        color: $neutral-500;
+        font-family: 'Material Icons Outlined';
+        font-size: 20px;
+        line-height: 1;
+        transition: 0.4s;
+        border: 0;
+      }
+
+      &[aria-expanded='true'] {
+        &:after {
+          transform: scale(-1);
+        }
+      }
+    }
+
+    .dropdown-menu {
+      padding: 0;
+      margin-top: 10px;
+      font-size: $font-size-base;
+      border: 0;
+      filter: drop-shadow(0 8px 18px rgba(35, 72, 92, 0.15));
+    }
+
+    .btn-language {
+      background: $color-white;
+      border: 1px solid $neutral-200;
+      border-radius: 4px;
+
+      &:focus {
+        box-shadow: 0 0 8px rgba(27, 132, 255, 0.48);
+      }
+    }
+
+    .dropdown-item {
+      position: relative;
+      min-width: 180px;
+      padding: 8px 20px;
+      color: $neutral-800;
+
+      &:hover {
+        background: $primary-100;
+      }
+
+      &:not(:last-child) {
+        &:before {
+          content: '';
+          position: absolute;
+          left: 20px;
+          bottom: 0;
+          width: calc(100% - 40px);
+          height: 1px;
+          background: $neutral-200;
+        }
+      }
+
+      &.choose {
+        &:after {
+          content: '\e876';
+          position: absolute;
+          top: calc(50% - 10px);
+          right: 20px;
+          color: $success-500;
+          font-family: 'Material Icons Outlined';
+          font-size: 20px;
+          line-height: 1;
+          transition: 0.4s;
+          border: 0;
+        }
+      }
+    }
+  }
+
+  &__contact {
+    li {
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+    }
+
+    a {
+      color: $neutral-600;
+      font-size: $font-size-base;
+      transition: 0.4s;
+
+      &:hover {
+        color: $primary-400;
+      }
+    }
+  }
+
+  &__connect {
+    ul {
+      display: flex;
+    }
+
+    li {
+      flex: 1;
+    }
+  }
+
+  &__copyright {
+    margin-top: 50px;
+    color: $neutral-400;
+    text-align: center;
+
+    span {
+      font-weight: 700;
+    }
+  }
 }

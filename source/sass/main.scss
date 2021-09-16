@@ -7,7 +7,7 @@
 // https://getbootstrap.com/docs/4.0/getting-started/theming/#sass
 // Need vendors go first because we inherit all of sass files of Bootstrap 4
 @import 'abstracts/color-customize';
-@import 'abstracts/bootstrap';
+// @import 'abstracts/bootstrap';
 
 // 2. Abstracts
 // ------------
@@ -34,8 +34,8 @@
 @import 'components/forms/field';
 @import 'components/forms/buttons';
 @import 'components/forms/checkbox';
-@import 'components/tables';
-@import 'components/icons';
+// @import 'components/tables';
+@import 'components/pagination';
 
 // 6. Pages
 // --------

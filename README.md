@@ -1,4 +1,4 @@
-# ⚡️ Markup project base
+# ⚡️ MOOC markup
 
 ## 🛠 Installation
 

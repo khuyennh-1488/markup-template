@@ -3,12 +3,12 @@
 // ======================================================
 
 .heading {
-  color: $color-title;
+  color: $color-black;
   font-weight: $font-weight-bold;
   letter-spacing: 1px;
 
   &--h2 {
-    font-size: $font-size-xxl;
+    font-size: $font-size-2xl;
 
     + .title__icon {
       padding-top: 3px;
@@ -16,7 +16,7 @@
   }
 
   &--h3 {
-    font-size: $font-size-xl;
+    font-size: 21px;
   }
 
   &--h4 {

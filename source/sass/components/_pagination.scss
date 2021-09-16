@@ -1,0 +1,47 @@
+// ======================================================
+// Components :: Pagination
+// ======================================================
+
+.paging {
+  $self: &;
+  margin: 20px 0 70px;
+
+  .pagination {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__link {
+    margin-left: 0;
+    color: $neutral-800;
+    font-weight: $font-weight-bold;
+    border: 0;
+
+    &:hover,
+    &--active {
+      border-radius: 4px;
+      background: $primary-100;
+    }
+  }
+
+  .material-icons-outlined {
+    color: $neutral-400;
+    transition: 0.4s;
+    font-size: $font-size-medium;
+
+    &:hover {
+      color: $primary-400;
+    }
+  }
+
+  .page-item {
+    min-width: 33px;
+  }
+
+  .page-control {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px;
+    margin: 0 5px;
+  }
+}

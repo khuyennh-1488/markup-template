@@ -3,26 +3,27 @@
 // ======================================================
 
 body {
-  font-size: $font-size-base;
+  font-size: $font-size-base !important;
   font-family: $font-family-base;
-  font-weight: $font-weight-base;
+  font-weight: $font-weight-light;
   scroll-behavior: smooth;
 }
 
 img {
+  max-width: 100%;
   vertical-align: middle;
 }
 
 a {
   color: $color-primary;
-  transition: 0.35s;
+  transition: 0.4s;
 
   &:hover,
   &:focus,
   &:active {
     outline: 0;
     box-shadow: none;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 }
 
@@ -70,5 +71,5 @@ strong {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $color-brand;
+  background: $secondary-500;
 }
